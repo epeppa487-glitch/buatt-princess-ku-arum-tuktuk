@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f5">
+  <title>A Little Gift For You ♡</title>
+  <style>
+    :root {
+      --pink: #f6a9c4;
+      --deep: #b84f78;
+      --cream: #fff9f7;
+      --ink: #654451;
+      --soft: #ffe4ed;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 15% 15%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 35%, #fff 0 2px, transparent 3px),
+        linear-gradient(145deg, #fff8f8, #ffeaf1 55%, #fff6ef);
+      background-size: 110px 110px, 150px 150px, auto;
+      overflow-x: hidden;
+    }
+    button { font: inherit; }
+    .wrap { width: min(720px, 92vw); margin: 0 auto; padding: 28px 0 56px; }
+    .tiny { letter-spacing: .22em; text-transform: uppercase; font: 11px Arial, sans-serif; color: #b97891; }
+    .center { text-align: center; }
+    .hero {
+      min-height: 88vh; display: grid; place-items: center; text-align: center;
+      padding: 34px 12px;
+    }
+    .hero-card {
+      width: min(560px, 100%); padding: 36px 24px 32px;
+      border: 1px solid #f7d1df; border-radius: 28px;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 18px 55px rgba(173, 91, 123, .12);
+      backdrop-filter: blur(8px);
+    }
+    .flower { font-size: 44px; margin-bottom: 14px; animation: sway 3s ease-in-out infinite; display: inline-block; }
+    h1 { font-size: clamp(36px, 9vw, 62px); line-height: 1.02; font-weight: 500; margin: 12px 0; color: #a94f73; }
+    .sub { font: 15px/1.8 Arial, sans-serif; color: #8e6877; }
+    .btn {
+      border: 0; border-radius: 999px; padding: 14px 24px; margin-top: 22px;
+      background: linear-gradient(135deg, #e98eb0, #c86c91); color: white;
+      box-shadow: 0 8px 22px rgba(200,108,145,.25); cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(200,108,145,.3); }
+    .hint { font: 11px Arial, sans-serif; color: #b58b9b; margin-top: 15px; }
+    #gift { display: none; animation: appear .8s ease both; }
+    .section {
+      margin: 24px 0; padding: 28px clamp(20px, 5vw, 42px);
+      border: 1px solid #f6d6e0; border-radius: 24px;
+      background: rgba(255,255,255,.78); box-shadow: 0 12px 35px rgba(173,91,123,.08);
+    }
+    h2 { color: #ad5879; font-size: clamp(25px, 6vw, 34px); font-weight: 500; margin: 8px 0 18px; }
+    p { font-size: 17px; line-height: 1.9; margin: 12px 0; }
+    .letter { font-size: 18px; }
+    .highlight { color: #b94f7b; font-style: italic; }
+    .matcha {
+      margin-top: 22px; padding: 18px 20px; border-radius: 18px;
+      background: #f1f8e9; border: 1px dashed #b7c99a;
+    }
+    .matcha p { margin: 0; color: #63734e; }
+    .signature { text-align: right; color: #a85d7b; font-style: italic; margin-top: 24px; }
+    .music {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      flex-wrap: wrap; font: 13px Arial, sans-serif;
+    }
+    .music button { border: 1px solid #efbfd0; background: #fff5f8; color: #a94f73; border-radius: 99px; padding: 10px 16px; cursor: pointer; }
+    .music small { color: #a78391; }
+    .footer { text-align: center; padding: 25px 10px 0; color: #b27d91; font: 12px Arial, sans-serif; }
+    .heart {
+      position: fixed; bottom: -30px; pointer-events: none; z-index: 5;
+      color: #e58eae; animation: floatUp 5s linear forwards; opacity: .8;
+    }
+    @keyframes floatUp { to { transform: translateY(-110vh) rotate(25deg); opacity: 0; } }
+    @keyframes sway { 0%,100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+    @keyframes appear { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero" id="intro">
+      <div class="hero-card">
+        <div class="flower">🌷</div>
+        <div class="tiny">a little something for you</div>
+        <h1>Hey,<br>pretty girl.</h1>
+        <p class="sub">Aku punya sesuatu kecil buat seseorang yang belakangan ini kelihatan makin cantik.</p>
+        <button class="btn" id="openBtn">Open your little gift ♡</button>
+        <div class="hint">psst... buka saat kamu lagi santai ya</div>
+      </div>
+    </section>
+
+    <section id="gift">
+      <div class="section center">
+        <div class="tiny">just for you</div>
+        <h2>Untuk kamu yang manis 🌸</h2>
+        <p class="letter">Aku cuma mau bilang satu hal: <span class="highlight">kamu cantik banget.</span></p>
+        <p>Apalagi sekarang habis potong rambut. Entah kenapa, gaya rambut barumu itu cocok banget sama kamu. Kelihatan fresh, manis, dan punya pesona sendiri. Tapi sebenarnya, mau rambutmu panjang, pendek, atau lagi berantakan sekalipun, kamu tetap punya cara sendiri buat terlihat istimewa.</p>
+        <p>Semoga setiap kali kamu ngaca, kamu bisa lihat hal-hal indah yang juga orang lain lihat dari dirimu. Jangan lupa senyum, ya. Senyummu itu salah satu hal kecil yang bisa bikin hari jadi lebih cerah.</p>
+      </div>
+
+      <div class="section">
+        <div class="tiny">one tiny reminder</div>
+        <h2>Dan satu lagi... 💚</h2>
+        <div class="matcha">
+          <p>Jangan kebanyakan minum es matcha yaaa. Nanti kamu jadi ijo, terus aku bingung mau manggil kamu manusia atau matcha latte. WKWKWK 😭🍵</p>
+          <p style="margin-top:12px">Tapi serius, jangan lupa minum air putih juga. Matcha boleh, jadi matcha berjalan jangan. Hehe.</p>
+        </div>
+      </div>
+
+      <div class="section center">
+        <div class="flower">💌</div>
+        <h2>Last little note</h2>
+        <p>Terima kasih sudah jadi kamu. Semoga hari-harimu dipenuhi hal baik, tawa yang tulus, dan alasan-alasan kecil untuk bahagia.</p>
+        <p class="highlight">Stay pretty, stay happy, and keep being you.</p>
+        <div class="signature">— someone who thinks you're lovely ♡</div>
+      </div>
+
+      <div class="section music">
+        <div>
+          <strong>Little background song ♫</strong><br>
+          <small id="musicStatus">Tambahkan file lagu.mp3 untuk mengaktifkan musik.</small>
+        </div>
+        <button id="musicBtn" type="button">▶ Play music</button>
+        <audio id="song" loop preload="none">
+          <source src="lagu.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="footer">made with a little bit of care ♡</div>
+    </section>
+  </main>
+
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const intro = document.getElementById('intro');
+    const gift = document.getElementById('gift');
+    const song = document.getElementById('song');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicStatus = document.getElementById('musicStatus');
+
+    openBtn.addEventListener('click', () => {
+      intro.style.display = 'none';
+      gift.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      makeHearts();
+      // Musik dicoba mulai setelah klik pengguna. Jika lagu.mp3 belum ada,
+      // halaman tetap berjalan dan tombol musik akan memberi info.
+      song.play().then(() => {
+        musicBtn.textContent = 'Ⅱ Pause music';
+        musicStatus.textContent = 'Now playing ♡';
+      }).catch(() => {
+        musicStatus.textContent = 'Tambahkan lagu.mp3 di folder yang sama, lalu tekan Play.';
+      });
+    });
+
+    musicBtn.addEventListener('click', () => {
+      if (song.paused) {
+        song.play().then(() => {
+          musicBtn.textContent = 'Ⅱ Pause music';
+          musicStatus.textContent = 'Now playing ♡';
+        }).catch(() => {
+          musicStatus.textContent = 'File lagu.mp3 belum tersedia atau formatnya tidak didukung.';
+        });
+      } else {
+        song.pause();
+        musicBtn.textContent = '▶ Play music';
+        musicStatus.textContent = 'Music paused';
+      }
+    });
+
+    function makeHearts() {
+      const symbols = ['♡', '♥', '✿', '❀'];
+      for (let i = 0; i < 18; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('span');
+          heart.className = 'heart';
+          heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+          heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 7500);
+        }, i * 180);
+      }
+    }
+  </script>
+</body>
+</html>
